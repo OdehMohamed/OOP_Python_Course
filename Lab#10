@@ -1,0 +1,76 @@
+# class Car:
+#     def __init__(self, make, model, year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+
+#     @classmethod
+#     def say_hello(cls,name,age):
+#         return f"Hello {name} you are {age} years old"
+
+#     @staticmethod
+#     def add_numbers(x, y):
+#         return x + y
+
+#     def start_engine(self):
+#         print(f"The {self.year} {self.make} {self.model}'s engine is starting.")
+
+# c1 = Car("Toyota", "Camry", 2022)
+# c1.start_engine()
+
+# print(Car.say_hello("mohamed",30))
+# Car.add_numbers(10,20)
+
+###### Q1
+# class BankAccount:
+#   bank_name="Arabi Bank"
+#   def __init__(self):
+#     pass
+
+#   @classmethod
+#   def change_bank_name(cls,new_name):
+#     cls.bank_name=new_name
+
+# print(BankAccount.bank_name)
+# BankAccount.change_bank_name("Islamic Bank")
+# print(BankAccount.bank_name)
+
+####### Q2
+# class MathOperations:
+#   def __init__(self):
+#     pass
+
+#   @staticmethod
+#   def calculate_square(n):
+#     return n**2
+
+# print(MathOperations.calculate_square(5))
+# print(MathOperations.calculate_square(3))
+# print(MathOperations.calculate_square(2))
+
+### Q3
+class Vehicle:
+  def __init__(self,brand,model):
+    self.brand=brand
+    self.model=model
+
+  def display_info(self):
+    print(f"Brand: {self.brand}")
+    print(f"Model: {self.model}")
+
+class Car(Vehicle):
+  def __init__(self,brand,model,number_of_doors):
+    Vehicle.__init__(self,brand,model)
+    super().__init__(brand,model)
+    self.number_of_doors=number_of_doors
+  ## override
+  def display_info(self):
+    super().display_info()
+    print(f"Number of doors: {self.number_of_doors}")
+
+v=Vehicle("Toyota","Camry")
+v.display_info()
+print('#'*40)
+c=Car("Toyota","Camry",4)
+c.display_info()
+
